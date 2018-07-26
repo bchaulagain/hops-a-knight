@@ -1,75 +1,70 @@
 'use strict';
 
 var app = angular.module('myApp', ['toastr']).directive('chessGame', chessGame);
- 
+
 function chessGame() {
   return {
     restrict: 'A',
-    controller: function controller(toastr, $scope ,$http) {
-      
-	  
-	  // get position
-	 
-	  
-	  var _this = this;
+    controller: function controller(toastr, $scope, $http) {
 
-	  
-	  
+      // get position
+
+      var _this = this;
+
       $scope.rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
       $scope.columns = [1, 2, 3, 4, 5, 6, 7, 8];
 
       var pos = [];
 
       //Toggle of selected / destination markers on board
-      $scope.getInitial = function (col, row, idx, idxp) {
+      $scope.getInitial = function(col, row, idx, idxp) {
 
-		$scope.first = false;
+        $scope.first = false;
         pos.push(idx, idxp);
 
         //ng-class '.initial' or '.destination' applied to selected element
         $scope.initialIdx = [pos[0], pos[1]];
         $scope.destinationIdx = [pos[2], pos[3]];
-		
-		if(pos[2] != undefined){
-			// call php API
-			$http({
-				method: 'POST',
-				url: "http://chaulagain.com/test/kninght.php",
-				headers:{
-				  'Content-Type': 'application/x-www-form-urlencoded'
-				},
-				transformRequest: function (obj) {
-				  var str = [];
-				  for (var p in obj)
-					str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-				  return str.join("&");
-				},
-				data:{A:$scope.initialIdx,B:$scope.destinationIdx},
-			}).then(function successCallback(response){
-				  
-				  $scope.positionMove = response['data'];
-				  console.log($scope.positionMove);
-				  
-				  toastr.success('Hops a knight ' +response['data']);
-				  //toastr.success('Wow! Nice move!');
-				  
-				  $scope.first = true;
-					
-			}, function errorCallback(response){
 
-				 
-			});
-			// end
-		}
-		
-		
-				 
-				 
+        if (pos[2] != undefined) {
+          // call php API
+          $http({
+            method: 'POST',
+            url: "http://chaulagain.com/test/kninght.php",
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            transformRequest: function(obj) {
+              var str = [];
+              for (var p in obj)
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+              return str.join("&");
+            },
+            data: {
+              A: $scope.initialIdx,
+              B: $scope.destinationIdx
+            },
+          }).then(function successCallback(response) {
+
+            $scope.positionMove = response['data'];
+            console.log($scope.positionMove);
+
+            toastr.success('Hops a knight ' + response['data']);
+            //toastr.success('Wow! Nice move!');
+
+            $scope.first = true;
+
+          }, function errorCallback(response) {
+
+          });
+          // end
+        }
+
         if (pos.length >= 4) pos.splice(0);
-			
-        $scope.move = function () {
 
-		  console.log('asdasd');
+        $scope.move = function() {
+
+          console.log('asdasd');
           var initial = angular.element('.initial');
           var destination = angular.element('.destination');
 
@@ -98,7 +93,7 @@ function chessGame() {
           this.destinationIdx = false;
         };
       };
-      $scope.textMove = function () {
+      $scope.textMove = function() {
         if ($scope.text.length === 4) {
           var piece = _this.text.substring(0, 2).toUpperCase();
           var position = _this.text.substring(2, 4).toUpperCase();
@@ -114,7 +109,7 @@ function chessGame() {
 
       // This function is called inside of the ng-class object, for each div that is repeated,
       // It sets up the initial pieces classes for each side.
-      $scope.piece = function (row, col) {
+      $scope.piece = function(row, col) {
         var sqr = row + col;
 
         //white
@@ -135,7 +130,6 @@ function chessGame() {
         if (sqr == 'E8') return 'BK';
       };
     }
-	
-	
-  };  
+
+  };
 }
