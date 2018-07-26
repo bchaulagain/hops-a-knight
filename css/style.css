@@ -1,0 +1,931 @@
+/* Raj - 7/18/17----------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+html,
+body,
+.viewport {
+  background: #f1eff0;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
+}
+
+/* Layout 
+   ----------------------------- */
+.fluid-container {
+  max-width: 960px;
+}
+
+full-width {
+  width: 100%;
+}
+
+.max {
+  max-width: 200%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.play-area {
+  padding: 1.5rem;
+}
+
+.banner {
+  background: 24EAC7;
+  height: 10vh;
+  min-height: 100px;
+  padding: 1rem;
+}
+
+.banner-img {
+  height: 6rem;
+  widht: 6rem;
+  -webkit-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.banner-img:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.banner-txt {
+  font-size: 2rem;
+}
+
+.about {
+  margin: 1rem;
+  padding: .5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.about:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+h1 {
+  display: inline;
+  font-size: 4rem;
+}
+
+p {
+  font-size: .75em;
+}
+
+/* Chess Board
+   ----------------------------- */
+.board {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* min-width: 400px; */
+}
+
+.chess-sq {
+  width: 12.5%;
+  height: 12.5%;
+  max-width: 120px;
+  padding: 4.16667%;
+  text-align: center;
+  font-size:11px;
+  -webkit-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  color: #adadad;
+}
+.chess-sq:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@-webkit-keyframes build {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes build {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+div:nth-child(1) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.1s;
+  -ms-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  -webkit-animation-duration: 0.1s;
+  -ms-animation-duration: 0.1s;
+  -moz-animation-duration: 0.1s;
+  -o-animation-duration: 0.1s;
+  animation-duration: 0.1s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(2) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+  -webkit-animation-duration: 0.2s;
+  -ms-animation-duration: 0.2s;
+  -moz-animation-duration: 0.2s;
+  -o-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(3) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.3s;
+  -ms-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -o-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-duration: 0.3s;
+  -ms-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  -o-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(4) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.4s;
+  -ms-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  -o-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  -ms-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  -o-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(5) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.5s;
+  -ms-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  -ms-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(6) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.6s;
+  -ms-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  -o-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  -webkit-animation-duration: 0.6s;
+  -ms-animation-duration: 0.6s;
+  -moz-animation-duration: 0.6s;
+  -o-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(7) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.7s;
+  -ms-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  -webkit-animation-duration: 0.7s;
+  -ms-animation-duration: 0.7s;
+  -moz-animation-duration: 0.7s;
+  -o-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+div:nth-child(8) > div.col-xs-1.chess-sq {
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.8s;
+  -ms-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  -o-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  -webkit-animation-duration: 0.8s;
+  -ms-animation-duration: 0.8s;
+  -moz-animation-duration: 0.8s;
+  -o-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: build;
+  -ms-animation-name: build;
+  -moz-animation-name: build;
+  -o-animation-name: build;
+  animation-name: build;
+}
+
+.initial {
+  background-color: rgba(11, 137, 208, 0.6) !important;
+}
+
+.destination {
+  background-color: rgba(24, 157, 134, 0.6) !important;
+}
+
+.accent1 {
+  background-color: rgba(11, 137, 208, 0.6);
+}
+
+.accent2 {
+  background-color: rgba(24, 157, 134, 0.6);
+}
+
+.initial {
+  background-color: rgba(5, 135, 218, 0.6) !important;
+}
+
+.destination {
+  background-color: rgba(54, 197, 39, 0.6) !important;
+}
+
+.A1 {
+  background-color: #fff;color: #000;
+}
+
+.B1 {
+  background-color: #000;color: #fff;
+}
+
+.C1 {
+  background-color: #fff;color: #000;
+}
+
+.D1 {
+  background-color: #000;color: #fff;
+}
+
+.E1 {
+  background-color: #fff;color: #000;
+}
+
+.F1 {
+  background-color: #000;color: #fff;
+}
+
+.G1 {
+  background-color: #fff;color: #000;
+}
+
+.H1 {
+  background-color: #000;color: #fff;
+}
+
+.A2 {
+  background-color: #fff;color: #000;
+}
+
+.A2 {
+  background-color: #000;color: #fff;
+}
+
+.B2 {
+  background-color: #000;color: #fff;
+}
+
+.B2 {
+  background-color: #fff;color: #000;
+}
+
+.C2 {
+  background-color: #fff;color: #000;
+}
+
+.C2 {
+  background-color: #000;color: #fff;
+}
+
+.D2 {
+  background-color: #000;color: #fff;
+}
+
+.D2 {
+  background-color: #fff;color: #000;
+}
+
+.E2 {
+  background-color: #fff;color: #000;
+}
+
+.E2 {
+  background-color: #000;color: #fff;
+}
+
+.F2 {
+  background-color: #000;color: #fff;
+}
+
+.F2 {
+  background-color: #fff;color: #000;
+}
+
+.G2 {
+  background-color: #fff;color: #000;
+}
+
+.G2 {
+  background-color: #000;color: #fff;
+}
+
+.H2 {
+  background-color: #000;color: #fff;
+}
+
+.H2 {
+  background-color: #fff;color: #000;
+}
+
+.A3 {
+  background-color: #fff;color: #000;
+}
+
+.B3 {
+  background-color: #000;color: #fff;
+}
+
+.C3 {
+  background-color: #fff;color: #000;
+}
+
+.D3 {
+  background-color: #000;color: #fff;
+}
+
+.E3 {
+  background-color: #fff;color: #000;
+}
+
+.F3 {
+  background-color: #000;color: #fff;
+}
+
+.G3 {
+  background-color: #fff;color: #000;
+}
+
+.H3 {
+  background-color: #000;color: #fff;
+}
+
+.A4 {
+  background-color: #fff;color: #000;
+}
+
+.A4 {
+  background-color: #000;color: #fff;
+}
+
+.B4 {
+  background-color: #000;color: #fff;
+}
+
+.B4 {
+  background-color: #fff;color: #000;
+}
+
+.C4 {
+  background-color: #fff;color: #000;
+}
+
+.C4 {
+  background-color: #000;color: #fff;
+}
+
+.D4 {
+  background-color: #000;color: #fff;
+}
+
+.D4 {
+  background-color: #fff;color: #000;
+}
+
+.E4 {
+  background-color: #fff;color: #000;
+}
+
+.E4 {
+  background-color: #000;color: #fff;
+}
+
+.F4 {
+  background-color: #000;color: #fff;
+}
+
+.F4 {
+  background-color: #fff;color: #000;
+}
+
+.G4 {
+  background-color: #fff;color: #000;
+}
+
+.G4 {
+  background-color: #000;color: #fff;
+}
+
+.H4 {
+  background-color: #000;color: #fff;
+}
+
+.H4 {
+  background-color: #fff;color: #000;
+}
+
+.A5 {
+  background-color: #fff;color: #000;
+}
+
+.B5 {
+  background-color: #000;color: #fff;
+}
+
+.C5 {
+  background-color: #fff;color: #000;
+}
+
+.D5 {
+  background-color: #000;color: #fff;
+}
+
+.E5 {
+  background-color: #fff;color: #000;
+}
+
+.F5 {
+  background-color: #000;color: #fff;
+}
+
+.G5 {
+  background-color: #fff;color: #000;
+}
+
+.H5 {
+  background-color: #000;color: #fff;
+}
+
+.A6 {
+  background-color: #fff;color: #000;
+}
+
+.A6 {
+  background-color: #000;color: #fff;
+}
+
+.B6 {
+  background-color: #000;color: #fff;
+}
+
+.B6 {
+  background-color: #fff;color: #000;
+}
+
+.C6 {
+  background-color: #fff;color: #000;
+}
+
+.C6 {
+  background-color: #000;color: #fff;
+}
+
+.D6 {
+  background-color: #000;color: #fff;
+}
+
+.D6 {
+  background-color: #fff;color: #000;
+}
+
+.E6 {
+  background-color: #fff;color: #000;
+}
+
+.E6 {
+  background-color: #000;color: #fff;
+}
+
+.F6 {
+  background-color: #000;color: #fff;
+}
+
+.F6 {
+  background-color: #fff;color: #000;
+}
+
+.G6 {
+  background-color: #fff;color: #000;
+}
+
+.G6 {
+  background-color: #000;color: #fff;
+}
+
+.H6 {
+  background-color: #000;color: #fff;
+}
+
+.H6 {
+  background-color: #fff;color: #000;
+}
+
+.A7 {
+  background-color: #fff;color: #000;
+}
+
+.B7 {
+  background-color: #000;color: #fff;
+}
+
+.C7 {
+  background-color: #fff;color: #000;
+}
+
+.D7 {
+  background-color: #000;color: #fff;
+}
+
+.E7 {
+  background-color: #fff;color: #000;
+}
+
+.F7 {
+  background-color: #000;color: #fff;
+}
+
+.G7 {
+  background-color: #fff;color: #000;
+}
+
+.H7 {
+  background-color: #000;color: #fff;
+}
+
+.A8 {
+  background-color: #fff;color: #000;
+}
+
+.A8 {
+  background-color: #000;color: #fff;
+}
+
+.B8 {
+  background-color: #000;color: #fff;
+}
+
+.B8 {
+  background-color: #fff;color: #000;
+}
+
+.C8 {
+  background-color: #fff;color: #000;
+}
+
+.C8 {
+  background-color: #000;color: #fff;
+}
+
+.D8 {
+  background-color: #000;color: #fff;
+}
+
+.D8 {
+  background-color: #fff;color: #000;
+}
+
+.E8 {
+  background-color: #fff;color: #000;
+}
+
+.E8 {
+  background-color: #000;color: #fff;
+}
+
+.F8 {
+  background-color: #000;color: #fff;
+}
+
+.F8 {
+  background-color: #fff;color: #000;
+}
+
+.G8 {
+  background-color: #fff;color: #000;
+}
+
+.G8 {
+  background-color: #000;color: #fff;
+}
+
+.H8 {
+  background-color: #000;color: #fff;
+}
+
+.H8 {
+  background-color: #fff;color: #000;
+}
+
+/* Inputs
+   ----------------------------- */
+.movement {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+}
+
+.text-input {
+  border: transparent;
+  border-radius: .2rem;
+  margin: .5rem auto;
+  height: 2rem;
+  width: 100%;
+}
+
+/* Buttons
+   ----------------------------- */
+.cst-btn {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  border: transparent;
+  border-radius: .2rem;
+  color: white;
+  background: #1E2E37;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.cst-btn:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
