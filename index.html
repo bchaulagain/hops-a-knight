@@ -2,7 +2,6 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Chess</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -10,33 +9,23 @@
 <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <div ng-app="myApp" ng-keydown="rm($event)" >
   <main class="fluid-container center" chess-game>
-<!-- 		<div class="row center" ng-show="first" style="text-align: center;font-size: 55px;">
-			<div class="col-xs-12 ">
-				<p> Hops a knight = {{positionMove}}</p>
-			</div>	
-		</div> -->
     <div class="row center">
       <div class="col-xs-12 play-area">
         <div class="board col-xs-12">
           <div class="row" ng-repeat="col in columns | orderBy:'-'">
-            
-				<div class="col-xs-1 chess-sq {{row}}{{col}}" ng-repeat="row in rows" ng-click="getInitial(col, row, $index, $parent.$index)" ng-class="[{ 'initial': $index === initialIdx[0] && $parent.$index === initialIdx[1],'destination': $index === destinationIdx[0] && $parent.$index === destinationIdx[1]}, piece(row, col)]">
-					
-					{{row}}	{{col}}
-           
-				</div>
+       	    <div class="col-xs-1 chess-sq {{row}}{{col}}" ng-repeat="row in rows" ng-click="getInitial(col, row, $index, $parent.$index)" ng-class="[{ 'initial': $index === initialIdx[0] && $parent.$index === initialIdx[1],'destination': $index === destinationIdx[0] && $parent.$index === destinationIdx[1]}, piece(row, col)]">
+	     {{row}}	{{col}}
+            </div>
           </div>
         </div>
       </div>
     </div>
 	
-
   </main>
 </div>
-    <script src="js/index.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
